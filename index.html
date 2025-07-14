@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JetGame - Oyun Dünyası</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: #0f0f1a;
+      color: #f4f4f4;
+    }
+
+    header {
+      background-color: #1a1a2e;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      color: #00fff7;
+      font-size: 32px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00fff7;
+    }
+
+    .hero {
+      padding: 80px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #1f1f3e, #1a1a2e);
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      color: #00fff7;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .game-card {
+      background: #222244;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,255,255,0.2);
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .game-card h3 {
+      color: #00fff7;
+      margin-bottom: 10px;
+    }
+
+    .game-card p {
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: #1a1a2e;
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JetGame</h1>
+    <nav>
+      <a href="#">Ana Sayfa</a>
+      <a href="#">Oyunlar</a>
+      <a href="#">İletişim</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>En Yeni ve Popüler Oyunlar Burada!</h2>
+    <p>JetGame ile oyun dünyasına jet hızında giriş yap!</p>
+  </section>
+
+  <section class="games">
+    <div class="game-card">
+      <img src="https://via.placeholder.com/300x180.png?text=Cyber+Racer" alt="Cyber Racer">
+      <h3>Cyber Racer</h3>
+      <p>Yarış dünyasında sınırları zorla! 🚀</p>
+    </div>
+
+    <div class="game-card">
+      <img src="https://via.placeholder.com/300x180.png?text=Zombie+City" alt="Zombie City">
+      <h3>Zombie City</h3>
+      <p>Karanlık şehrin hayatta kalan son umudu sen ol!</p>
+    </div>
+
+    <div class="game-card">
+      <img src="https://via.placeholder.com/300x180.png?text=Space+Hunter" alt="Space Hunter">
+      <h3>Space Hunter</h3>
+      <p>Uzayda nefes kesen bir aksiyon seni bekliyor.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 JetGame. Tüm hakları saklıdır.
+  </footer>
+</body>
+</html>
