@@ -1,35 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Giriş Yap | GameJet</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>Giriş Yap - GameJet</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-body">
-  <div class="login-container">
-    <h2>Giriş Yap</h2>
-    <input type="text" id="login-username" placeholder="Kullanıcı Adı" />
-    <input type="password" id="login-password" placeholder="Şifre" />
-    <button onclick="login()">Giriş</button>
-    <p>Hesabınız yok mu? <a href="register.html">Kayıt Ol</a></p>
-    <p id="login-error" style="color:red;"></p>
-  </div>
-  <script>
-    function login() {
-      const username = document.getElementById("login-username").value;
-      const password = document.getElementById("login-password").value;
-      const savedUser = localStorage.getItem("user");
-      const savedPass = localStorage.getItem("pass");
-
-      if (username === savedUser && password === savedPass) {
-        localStorage.setItem("loggedIn", "true");
-        window.location.href = "dashboard.html";
-      } else {
-        document.getElementById("login-error").innerText = "Bilgiler hatalı!";
-      }
-    }
-  </script>
+<body>
+  <h2>Giriş Yap</h2>
+  <form id="loginForm">
+    <input type="text" id="loginUsername" placeholder="Kullanıcı Adı" required><br>
+    <input type="password" id="loginPassword" placeholder="Şifre" required><br>
+    <button type="submit">Giriş Yap</button>
+  </form>
+  <p><a href="register.html">Kayıt Ol</a></p>
+  <script src="script.js"></script>
 </body>
 </html>
