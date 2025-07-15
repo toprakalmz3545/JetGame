@@ -1,119 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GameJet - Ana Sayfa</title>
-<style>
-  body {
-    margin: 0;
-    background: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  header {
-    background: #8B0000;
-    padding: 15px 30px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-  }
-  header .logo {
-    flex-grow: 1;
-  }
-  main {
-    flex-grow: 1;
-    padding: 30px;
-  }
-  .games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-    gap: 20px;
-  }
-  .game-card {
-    background: #1a1a1a;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 0 8px #8B0000;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    user-select: none;
-  }
-  .game-card:hover {
-    transform: scale(1.05);
-  }
-  .game-card h3 {
-    margin: 10px 0 5px 0;
-    color: #ff4d4d;
-  }
-  .game-card p {
-    font-size: 14px;
-    color: #ccc;
-  }
-  footer {
-    text-align: right;
-    padding: 10px 20px;
-    font-style: italic;
-    font-size: 13px;
-    color: #777;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <title>GameJet Ana Sayfa</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header>
-  <div class="logo">GameJet</div>
-</header>
-
-<main>
-  <div class="games-grid" id="gamesGrid"></div>
-</main>
-
-<footer>
-  Toprak Almaz ürünüdür
-</footer>
-
-<script>
-  const games = [
-    { title: 'Call of Battle', desc: 'Aksiyon ve macera dolu FPS oyunu' },
-    { title: 'Space Racer', desc: 'Uzayda geçen heyecanlı yarış oyunu' },
-    { title: 'Puzzle Mania', desc: 'Zekânızı zorlayacak bulmaca oyunu' },
-    { title: 'Fantasy Quest', desc: 'Büyülü dünyada macera RPG oyunu' }
-  ];
-
-  function loadGames() {
-    const container = document.getElementById('gamesGrid');
-    container.innerHTML = '';
-    games.forEach(game => {
-      const card = document.createElement('div');
-      card.className = 'game-card';
-      card.innerHTML = `
-        <h3>${game.title}</h3>
-        <p>${game.desc}</p>
-      `;
-      card.onclick = () => alert(`${game.title} seçildi!`);
-      container.appendChild(card);
-    });
-  }
-
-  function checkLogin() {
-    const user = localStorage.getItem('loggedUser');
-    if (!user) {
-      alert('Önce giriş yapmalısınız!');
-      window.location.href = 'index.html';
-    }
-  }
-
-  window.onload = () => {
-    checkLogin();
-    loadGames();
-  };
-</script>
-
+  <header><h1>GameJet - Hoş Geldin!</h1></header>
+  <section class="games">
+    <div class="card"><img src="images/gta.jpg"><h2>GTA V</h2><p>249 TL</p></div>
+    <div class="card"><img src="images/fifa.jpg"><h2>FIFA 25</h2><p>499 TL</p></div>
+    <div class="card"><img src="images/minecraft.jpg"><h2>Minecraft</h2><p>199 TL</p></div>
+    <div class="card"><img src="images/eldenring.jpg"><h2>Elden Ring</h2><p>599 TL</p></div>
+    <div class="card"><img src="images/cyberpunk.jpg"><h2>Cyberpunk 2077</h2><p>349 TL</p></div>
+  </section>
 </body>
 </html>

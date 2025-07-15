@@ -1,124 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GameJet - Giriş / Kayıt</title>
-<style>
-  body {
-    margin: 0;
-    background: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  header {
-    background: #8B0000;
-    padding: 15px 30px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-  }
-  header .logo {
-    flex-grow: 1;
-  }
-  main {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .form-box {
-    background: #1a1a1a;
-    padding: 30px 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #8B0000;
-    width: 320px;
-  }
-  .form-box h2 {
-    margin: 0 0 20px 0;
-    color: #ff4d4d;
-    text-align: center;
-  }
-  .form-box input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-  }
-  .form-box button {
-    width: 100%;
-    background: #ff0000;
-    border: none;
-    color: white;
-    padding: 12px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  .form-box button:hover {
-    background: #b30000;
-  }
-  .form-box .toggle-text {
-    text-align: center;
-    margin-top: 12px;
-    font-size: 14px;
-  }
-  .form-box .toggle-text a {
-    color: #ff4d4d;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .form-box .toggle-text a:hover {
-    text-decoration: underline;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <title>GameJet Giriş</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header>
-  <div class="logo">GameJet</div>
-</header>
-
-<main>
-  <div class="form-box" id="login-box">
-    <h2>Giriş Yap</h2>
-    <input type="text" id="login-username" placeholder="Kullanıcı Adı" />
-    <input type="password" id="login-password" placeholder="Şifre" />
-    <button onclick="login()">Giriş</button>
-    <div class="toggle-text">
-      Hesabın yok mu? <a href="#" onclick="showRegister()">Kayıt Ol</a>
-    </div>
+  <div class="login-container">
+    <h1>GameJet</h1>
+    <input id="username" type="text" placeholder="Kullanıcı Adı" />
+    <input id="password" type="password" placeholder="Şifre" />
+    <button onclick="login()">Giriş Yap</button>
+    <p>Hesabın yok mu? <a href="register.html">Kayıt Ol</a></p>
   </div>
-
-  <div class="form-box" id="register-box" style="display:none;">
-    <h2>Kayıt Ol</h2>
-    <input type="text" id="register-username" placeholder="Kullanıcı Adı" />
-    <input type="password" id="register-password" placeholder="Şifre" />
-    <button onclick="register()">Kayıt Ol</button>
-    <div class="toggle-text">
-      Zaten hesabın var mı? <a href="#" onclick="showLogin()">Giriş Yap</a>
-    </div>
-  </div>
-</main>
-
-<script>
-  function showRegister() {
-    document.getElementById('login-box').style.display = 'none';
-    document.getElementById('register-box').style.display = 'block';
-  }
-  function showLogin() {
-    document.getElementById('register-box').style.display = 'none';
-    document.getElementById('login-box').style.display = 'block';
-  }
-
-  function register
+  <script>
+    function login() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      const savedU = localStorage.getItem("username");
+      const savedP = localStorage.getItem("password");
+      if (u === savedU && p === savedP) {
+        window.location.href = "home.html";
+      } else {
+        alert("Hatalı giriş!");
+      }
+    }
+  </script>
+</body>
+</html>
