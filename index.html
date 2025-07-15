@@ -1,31 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>GameJet Giriş</title>
+  <title>GameJet - Giriş</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="login-container">
-    <h1>GameJet</h1>
-    <input id="username" type="text" placeholder="Kullanıcı Adı" />
-    <input id="password" type="password" placeholder="Şifre" />
-    <button onclick="login()">Giriş Yap</button>
-    <p>Hesabın yok mu? <a href="register.html">Kayıt Ol</a></p>
-  </div>
-  <script>
-    function login() {
-      const u = document.getElementById("username").value;
-      const p = document.getElementById("password").value;
-      const savedU = localStorage.getItem("username");
-      const savedP = localStorage.getItem("password");
-      if (u === savedU && p === savedP) {
-        window.location.href = "home.html";
-      } else {
-        alert("Hatalı giriş!");
-      }
-    }
-  </script>
+  <header>
+    <div class="top-bar">
+      <div class="logo">GameJet</div>
+      <div class="thanks">Bizi tercih ettiğiniz için teşekkürler</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <h2>Giriş Yap</h2>
+      <input id="username" type="text" placeholder="Kullanıcı Adı" />
+      <input id="password" type="password" placeholder="Şifre" />
+      <button onclick="login()">Giriş</button>
+      <p>Hesabın yok mu? <a href="register.html">Kayıt Ol</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-text">Toprak Almaz ürünüdür</div>
+  </footer>
+
+<script>
+function login() {
+  const u = document.getElementById("username").value.trim();
+  const p = document.getElementById("password").value.trim();
+  const savedU = localStorage.getItem("username");
+  const savedP = localStorage.getItem("password");
+  if(u === savedU && p === savedP) {
+    window.location.href = "home.html";
+  } else {
+    alert("Kullanıcı adı veya şifre hatalı!");
+  }
+}
+</script>
 </body>
 </html>

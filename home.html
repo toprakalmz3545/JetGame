@@ -1,19 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>GameJet Ana Sayfa</title>
+  <title>GameJet - Ana Sayfa</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header><h1>GameJet - Hoş Geldin!</h1></header>
-  <section class="games">
-    <div class="card"><img src="images/gta.jpg"><h2>GTA V</h2><p>249 TL</p></div>
-    <div class="card"><img src="images/fifa.jpg"><h2>FIFA 25</h2><p>499 TL</p></div>
-    <div class="card"><img src="images/minecraft.jpg"><h2>Minecraft</h2><p>199 TL</p></div>
-    <div class="card"><img src="images/eldenring.jpg"><h2>Elden Ring</h2><p>599 TL</p></div>
-    <div class="card"><img src="images/cyberpunk.jpg"><h2>Cyberpunk 2077</h2><p>349 TL</p></div>
-  </section>
+  <header>
+    <div class="top-bar">
+      <div class="logo">GameJet</div>
+      <div class="thanks">Bizi tercih ettiğiniz için teşekkürler</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="games-grid" id="games-grid">
+      <!-- Oyunlar buraya gelecek -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-text">Toprak Almaz ürünüdür</div>
+  </footer>
+
+<script>
+const games = [
+  {
+    title: "Call of Battle",
+    desc: "Aksiyon ve macera dolu FPS oyunu",
+    img: "https://via.placeholder.com/300x140?text=Call+of+Battle"
+  },
+  {
+    title: "Space Racer",
+    desc: "Uzayda geçen heyecanlı yarış oyunu",
+    img: "https://via.placeholder.com/300x140?text=Space+Racer"
+  },
+  {
+    title: "Puzzle Mania",
+    desc: "Zekânızı zorlayacak bulmaca oyunu",
+    img: "https://via.placeholder.com/300x140?text=Puzzle+Mania"
+  },
+  {
+    title: "Fantasy Quest",
+    desc: "Büyülü dünyada macera RPG oyunu",
+    img: "https://via.placeholder.com/300x140?text=Fantasy+Quest"
+  }
+];
+
+function loadGames() {
+  const container = document.getElementById("games-grid");
+  container.innerHTML = "";
+  games.forEach(game => {
+    const card = document.createElement("div");
+    card.className = "game-card";
+    card.innerHTML = `
+      <img src="${game.img}" alt="${game.title}" />
+      <h3>${game.title}</h3>
+      <p>${game.desc}</p>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function checkAuth() {
+  const savedU = localStorage.getItem("username");
+  const savedP = localStorage.getItem("password");
+  if(!savedU || !savedP) {
+    alert("Lütfen önce giriş yapınız!");
+    window.location.href = "index.html";
+  }
+}
+
+window.onload = () => {
+  checkAuth();
+  loadGames();
+};
+</script>
 </body>
 </html>

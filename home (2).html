@@ -1,0 +1,62 @@
+<!-- home.html içinde <script> kısmını aşağıdaki gibi değiştir -->
+
+<script>
+function getAdminGames() {
+  return JSON.parse(localStorage.getItem("adminGames") || "[]");
+}
+
+function loadGames() {
+  const container = document.getElementById("games-grid");
+  container.innerHTML = "";
+  const defaultGames = [
+    {
+      title: "Call of Battle",
+      desc: "Aksiyon ve macera dolu FPS oyunu",
+      img: "https://via.placeholder.com/300x140?text=Call+of+Battle"
+    },
+    {
+      title: "Space Racer",
+      desc: "Uzayda geçen heyecanlı yarış oyunu",
+      img: "https://via.placeholder.com/300x140?text=Space+Racer"
+    },
+    {
+      title: "Puzzle Mania",
+      desc: "Zekânızı zorlayacak bulmaca oyunu",
+      img: "https://via.placeholder.com/300x140?text=Puzzle+Mania"
+    },
+    {
+      title: "Fantasy Quest",
+      desc: "Büyülü dünyada macera RPG oyunu",
+      img: "https://via.placeholder.com/300x140?text=Fantasy+Quest"
+    }
+  ];
+
+  const adminGames = getAdminGames();
+  const allGames = [...defaultGames, ...adminGames];
+
+  allGames.forEach(game => {
+    const card = document.createElement("div");
+    card.className = "game-card";
+    card.innerHTML = `
+      <img src="${game.img}" alt="${game.title}" />
+      <h3>${game.title}</h3>
+      <p>${game.desc}</p>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function checkAuth() {
+  const savedU = localStorage.getItem("username");
+  const savedP = localStorage.getItem("password");
+  if(!savedU || !savedP) {
+    alert("Lütfen önce giriş yapınız!");
+    window.location.href = "index.html";
+  }
+}
+
+window.onload = () => {
+  checkAuth();
+  loadGames();
+};
+</script>

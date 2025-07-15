@@ -1,30 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GameJet Admin Panel</title>
+  <title>GameJet - Admin Panel</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>GameJet Admin Panel</h1>
-    <div id="loginPanel">
-      <input type="password" id="adminPass" placeholder="Şifre girin" />
-      <button onclick="checkPassword()">Giriş</button>
-    </div>
-    <div id="adminPanel" style="display:none;">
-      <h2>Oyun Ekle</h2>
-      <input id="gameName" placeholder="Oyun Adı" />
-      <input id="gameCategory" placeholder="Kategori" />
-      <input id="gamePrice" placeholder="Fiyat" />
-      <input id="gameImage" placeholder="Görsel URL" />
-      <button onclick="addGame()">Ekle</button>
-      <h2>Oyun Listesi</h2>
-      <div id="gameList"></div>
-    </div>
+  <div class="admin-login" id="login-panel">
+    <h2>Admin Girişi</h2>
+    <input id="admin-password" type="password" placeholder="Admin Şifresi" />
+    <button onclick="adminLogin()">Giriş Yap</button>
   </div>
-  <script src="admin.js"></script>
+
+  <div class="admin-panel" id="admin-panel" style="display:none;">
+    <h2>Oyun Ekle</h2>
+    <input id="game-title" type="text" placeholder="Oyun Başlığı" />
+    <input id="game-desc" type="text" placeholder="Oyun Açıklaması" />
+    <input id="game-img" type="text" placeholder="Oyun Resim URL'si" />
+    <button onclick="addGame()">Ekle</button>
+
+    <h3>Oyun Listesi</h3>
+    <ul id="game-list"></ul>
+  </div>
+
+  <footer>
+    <div class="footer-text">Toprak Almaz ürünüdür</div>
+  </footer>
+
+<script>
+const ADMIN_PASSWORD = "admin123"; // Kendine göre değiştir
+
+function adminLogin() {
+  const pass = document.getElementById("admin-password").value;
+  if(pass === ADMIN_PASSWORD) {
+    document.getElementById("login-panel").style.display = "none";
+    document.getElementById("admin-panel").style.display = "block";
+    loadGames();
+  } else {
+    alert("Şifre yanlış!");
+  }
+}
+
+function loadGames() {
+  const listEl = document.getElementById("game-list");
+  listEl.innerHTML = "";
+  let games = JSON.parse(localStorage.getItem("adminGames") || "[]");
+  games.forEach((game, i) => {
+    const li = document.createElement("li");
+    li.textContent = `${game.title} - ${game.desc}`;
+    li.style.cursor = "pointer";
+    li.onclick = () => {
+      if(confirm("Bu oyunu silmek istiyor musunuz?")) {
+        games.splice(i,1);
+        localStorage.setItem("adminGames", JSON.stringify(games));
+        loadGames();
+      }
+    };
+    listEl.appendChild(li);
+  });
+}
+
+function addGame() {
+  const title = document.getElementById("game-title").value.trim();
+  const desc = document.getElementById("game-desc").value.trim();
+  const img = document.getElementById("game-img").value.trim();
+  if(!title || !desc || !img) {
+    alert("Lütfen tüm alanları doldurunuz.");
+    return;
+  }
+  let games = JSON.parse(localStorage.getItem("adminGames") || "[]");
+  games.push({title, desc, img});
+  localStorage.setItem("adminGames", JSON.stringify(games));
+  alert("Oyun eklendi!");
+  document.getElementById("game-title").value = "";
+  document.getElementById("game-desc").value = "";
+  document.getElementById("game-img").value = "";
+  loadGames();
+}
+</script>
 </body>
 </html>

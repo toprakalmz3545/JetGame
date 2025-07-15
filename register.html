@@ -1,28 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Kayıt Ol - GameJet</title>
+  <title>GameJet - Kayıt Ol</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="login-container">
-    <h1>Hesap Oluştur</h1>
-    <input id="username" type="text" placeholder="Kullanıcı Adı" />
-    <input id="password" type="password" placeholder="Şifre" />
-    <button onclick="register()">Kayıt Ol</button>
-    <p>Zaten hesabın var mı? <a href="index.html">Giriş Yap</a></p>
-  </div>
-  <script>
-    function register() {
-      const u = document.getElementById("username").value;
-      const p = document.getElementById("password").value;
-      localStorage.setItem("username", u);
-      localStorage.setItem("password", p);
-      alert("Kayıt başarılı! Şimdi giriş yap.");
-      window.location.href = "index.html";
-    }
-  </script>
+  <header>
+    <div class="top-bar">
+      <div class="logo">GameJet</div>
+      <div class="thanks">Bizi tercih ettiğiniz için teşekkürler</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <h2>Kayıt Ol</h2>
+      <input id="username" type="text" placeholder="Kullanıcı Adı" />
+      <input id="password" type="password" placeholder="Şifre" />
+      <button onclick="register()">Kayıt Ol</button>
+      <p>Zaten hesabın var mı? <a href="index.html">Giriş Yap</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-text">Toprak Almaz ürünüdür</div>
+  </footer>
+
+<script>
+function register() {
+  const u = document.getElementById("username").value.trim();
+  const p = document.getElementById("password").value.trim();
+  if(u.length < 3 || p.length < 3) {
+    alert("Kullanıcı adı ve şifre en az 3 karakter olmalı!");
+    return;
+  }
+  localStorage.setItem("username", u);
+  localStorage.setItem("password", p);
+  alert("Kayıt başarılı! Giriş yapabilirsiniz.");
+  window.location.href = "index.html";
+}
+</script>
 </body>
 </html>
+	
