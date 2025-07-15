@@ -2,33 +2,24 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GameJet | Dashboard</title>
+  <meta charset="UTF-8">
+  <title>GameJet Dashboard</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-  <header>
-    <div class="logo">GameJet</div>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="#" onclick="logout()">Çıkış Yap</a>
-    </nav>
-  </header>
-  <main class="container">
-    <h2>Hoş Geldin, <span id="username"></span>!</h2>
-    <p>Buradan oyunları inceleyebilir ve satın alma işlemleri yapabilirsin.</p>
-  </main>
+<body style="background-color:#121212;color:white;font-family:sans-serif;padding:20px;">
+  <h1>Dashboard</h1>
+  <p>Hoş geldin <span id="username"></span>!</p>
+  <button onclick="logout()" style="padding:10px;background:#c4001d;color:white;border:none;border-radius:4px;cursor:pointer;">Çıkış Yap</button>
   <script>
-    if (localStorage.getItem("loggedIn") !== "true") {
-      window.location.href = "login.html";
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (!loggedIn || loggedIn !== "true") {
+      window.location.href = "index.html";
     } else {
       document.getElementById("username").innerText = localStorage.getItem("user");
     }
-
     function logout() {
       localStorage.removeItem("loggedIn");
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }
   </script>
 </body>
