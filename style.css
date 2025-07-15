@@ -1,42 +1,60 @@
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #121212;
+    font-family: sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+header {
+    background-color: red;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
     color: white;
 }
-
-.centered {
-    text-align: center;
-    margin-top: 100px;
-}
-
-input, button {
+#adminPanel {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    width: 300px;
+    background: #222;
     padding: 10px;
-    margin: 5px;
-    font-size: 16px;
+    border: 1px solid #555;
+    display: none;
+    z-index: 100;
 }
-
-#games-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+#adminPanel input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
 }
-
-.game-box {
-    background: #1f1f1f;
-    border: 1px solid #333;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
+#adminPanel button {
+    width: 100%;
+    padding: 5px;
+    background: red;
+    color: white;
+    border: none;
 }
-
-#footer-note {
+footer {
     position: fixed;
     bottom: 10px;
     right: 10px;
     font-size: 12px;
-    color: #ccc;
+    color: gray;
+}
+.gameBox {
+    border: 1px solid #444;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    background: #222;
+    width: 200px;
+}
+.gameBox img {
+    width: 100%;
 }

@@ -1,30 +1,57 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GameJet | Ana Sayfa</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-black text-white min-h-screen">
-  <header class="p-4 text-3xl font-bold text-red-600">
-    Game<span class="text-white">Jet</span>
-  </header>
-  <main class="p-6">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <div class="bg-gray-900 p-4 rounded shadow-md text-center">
-        <h3 class="text-xl font-semibold mb-2">GTA V</h3>
-        <p class="text-red-600 font-bold">₺299</p>
-      </div>
-      <div class="bg-gray-900 p-4 rounded shadow-md text-center">
-        <h3 class="text-xl font-semibold mb-2">FIFA 24</h3>
-        <p class="text-red-600 font-bold">₺399</p>
-      </div>
-      <div class="bg-gray-900 p-4 rounded shadow-md text-center">
-        <h3 class="text-xl font-semibold mb-2">Cyberpunk 2077</h3>
-        <p class="text-red-600 font-bold">₺199</p>
-      </div>
-    </div>
-  </main>
-</body>
-</html>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const isAdmin = localStorage.getItem("admin") === "true";
+    const adminPanel = document.getElementById("adminPanel");
+    const toggleButton = document.getElementById("adminToggle");
+    const gameContainer = document.getElementById("gameContainer");
+
+    toggleButton.addEventListener("click", () => {
+        if (!isAdmin) {
+            const password = prompt("Admin şifresini girin:");
+            if (password === "123456top") {
+                localStorage.setItem("admin", "true");
+                location.reload();
+            } else {
+                alert("Yanlış şifre!");
+                return;
+            }
+        }
+        adminPanel.style.display = adminPanel.style.display === "block" ? "none" : "block";
+    });
+
+    function renderGames() {
+        const games = JSON.parse(localStorage.getItem("games") || "[]");
+        gameContainer.innerHTML = "";
+        games.forEach((game, index) => {
+            const div = document.createElement("div");
+            div.className = "gameBox";
+            div.innerHTML = \`
+                <img src="\${game.image}" alt="">
+                <h3>\${game.name}</h3>
+                <p>\${game.price} TL</p>
+                \${isAdmin ? '<button onclick="removeGame(' + index + ')">Sil</button>' : '<button>Satın Al</button>'}
+            \`;
+            gameContainer.appendChild(div);
+        });
+    }
+
+    renderGames();
+    window.removeGame = function(index) {
+        const games = JSON.parse(localStorage.getItem("games") || "[]");
+        games.splice(index, 1);
+        localStorage.setItem("games", JSON.stringify(games));
+        renderGames();
+    };
+
+    window.addGame = function() {
+        const name = document.getElementById("gameName").value;
+        const price = document.getElementById("gamePrice").value;
+        const image = document.getElementById("gameImage").value;
+        if (name && price && image) {
+            const games = JSON.parse(localStorage.getItem("games") || "[]");
+            games.push({ name, price, image });
+            localStorage.setItem("games", JSON.stringify(games));
+            renderGames();
+        }
+    };
+});

@@ -1,23 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GameJet | Giriş Yap</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GameJet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-white min-h-screen flex items-center justify-center">
-  <div class="absolute top-6 left-6 text-3xl font-bold text-red-600">Game<span class="text-white">Jet</span></div>
-  <div class="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-md">
-    <h2 class="text-center text-2xl font-bold text-red-500 mb-6">Giriş Yap</h2>
-    <form id="loginForm" class="space-y-4">
-      <input type="text" id="username" placeholder="Kullanıcı Adı" class="w-full p-3 rounded bg-gray-800 text-white" required />
-      <input type="password" id="password" placeholder="Şifre" class="w-full p-3 rounded bg-gray-800 text-white" required />
-      <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded font-semibold">Giriş Yap</button>
-    </form>
-    <p class="mt-4 text-sm text-center">Hesabın yok mu? <a href="register.html" class="text-red-400 hover:underline">Kayıt Ol</a></p>
-    <p id="errorMessage" class="text-red-500 mt-4 text-sm text-center hidden">Hatalı kullanıcı adı veya şifre!</p>
-  </div>
-  <script src="script.js"></script>
+<body>
+    <header>
+        <div class="logo">GameJet</div>
+        <button id="adminToggle">Admin Panel</button>
+    </header>
+
+    <main id="gameContainer"></main>
+
+    <footer>
+        <p>Bir Toprak Almaz Ürünüdür</p>
+    </footer>
+
+    <div id="adminPanel" class="hidden">
+        <h2>Admin Panel</h2>
+        <input type="text" id="gameName" placeholder="Oyun Adı">
+        <input type="text" id="gamePrice" placeholder="Fiyat">
+        <input type="text" id="gameImage" placeholder="Görsel URL">
+        <button onclick="addGame()">Ekle</button>
+        <div id="gameList"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
