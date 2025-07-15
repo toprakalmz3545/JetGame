@@ -1,1 +1,22 @@
-<!DOCTYPE html><html><head><title>Ana Sayfa</title></head><body><h1>Ana Sayfa</h1></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Giriş Yap | GameJet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center">
+  <div class="absolute top-6 left-6 text-red-600 text-3xl font-bold">Game<span class="text-white">Jet</span></div>
+  <div class="bg-gray-900 p-10 rounded-2xl shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center text-red-500">Giriş Yap</h2>
+    <form id="loginForm" class="space-y-5">
+      <input type="text" id="username" placeholder="Kullanıcı Adı" class="w-full p-3 rounded bg-gray-800 text-white focus:outline-none" required />
+      <input type="password" id="password" placeholder="Şifre" class="w-full p-3 rounded bg-gray-800 text-white focus:outline-none" required />
+      <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded font-semibold">Giriş Yap</button>
+    </form>
+    <p id="errorMessage" class="text-red-500 mt-4 text-sm text-center hidden">Hatalı kullanıcı adı veya şifre!</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

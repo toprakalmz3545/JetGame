@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anasayfa | GameJet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white min-h-screen">
+  <header class="p-6 bg-gray-900 flex justify-between items-center shadow-md">
+    <div class="text-red-600 text-3xl font-bold">Game<span class="text-white">Jet</span></div>
+    <button onclick="location.href='index.html'" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Çıkış Yap</button>
+  </header>
+  <main class="p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Oyun Kutuları -->
+    <div class="bg-gray-800 rounded-xl overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://via.placeholder.com/300x180?text=GTA+V" alt="GTA V" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold mb-2">GTA V</h3>
+        <p class="text-red-400 font-bold">₺299,00</p>
+      </div>
+    </div>
+    <div class="bg-gray-800 rounded-xl overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://via.placeholder.com/300x180?text=FIFA+24" alt="FIFA 24" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold mb-2">FIFA 24</h3>
+        <p class="text-red-400 font-bold">₺399,00</p>
+      </div>
+    </div>
+    <div class="bg-gray-800 rounded-xl overflow-hidden shadow hover:scale-105 transition">
+      <img src="https://via.placeholder.com/300x180?text=Cyberpunk+2077" alt="Cyberpunk 2077" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold mb-2">Cyberpunk 2077</h3>
+        <p class="text-red-400 font-bold">₺199,00</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
