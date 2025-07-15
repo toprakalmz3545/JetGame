@@ -1,22 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>GameJet | Giriş</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameJet | Next-Level Gaming</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="toprak-almaz">Bu bir Toprak Almaz ürünüdür</div>
+    <!-- Toprak Almaz Yazısı -->
+    <div class="watermark pulse">Bu bir Toprak Almaz ürünüdür</div>
 
-    <div class="login-container">
-        <h1>GAMEJET</h1>
-        <div class="login-form">
-            <input type="text" placeholder="Kullanıcı Adı" id="username">
-            <input type="password" placeholder="Şifre" id="password">
-            <button onclick="login()">Giriş Yap</button>
-            <button onclick="register()">Kayıt Ol</button>
+    <!-- Konsol Animasyonu -->
+    <div class="console-effect">
+        <div class="led"></div>
+        <span>>_ GameJet Terminal</span>
+    </div>
+
+    <!-- Ana Giriş Alanı -->
+    <div class="auth-glass">
+        <div class="logo-glitch">GAME<span>JET</span></div>
+        
+        <div class="auth-form">
+            <div class="input-group">
+                <input type="text" id="username" required>
+                <label>Kullanıcı Adı</label>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" required>
+                <label>Şifre</label>
+                <div class="underline"></div>
+            </div>
+
+            <button id="loginBtn" class="btn-hover">
+                <span>Giriş Yap</span>
+                <div class="hover-effect"></div>
+            </button>
+
+            <button id="registerBtn" class="btn-hover">
+                <span>Kayıt Ol</span>
+                <div class="hover-effect"></div>
+            </button>
         </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
+<!-- index.html body kısmına ekle -->
+<div class="game-background">
+    <div class="parallax-layer" data-depth="0.1"></div> <!-- Uzak yıldızlar -->
+    <div class="parallax-layer" data-depth="0.3"></div> <!-- Gezegenler -->
+    <div class="parallax-layer" data-depth="0.6"></div> <!-- Uçan uzay gemileri -->
+</div>

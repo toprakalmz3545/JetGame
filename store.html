@@ -1,22 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>GameJet | Mağaza</title>
+    <meta charset="UTF-8">
+    <title>GameJet | Oyun Hesapları</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="toprak-almaz">Bu bir Toprak Almaz ürünüdür</div>
-    <div class="user-info" id="userInfo"></div>
-    
-    <div class="game-cards">
-        <div class="card">
-            <img src="images/fifa.jpg" alt="FIFA 25">
-            <h3>FIFA 25</h3>
-            <p class="price">299.90 ₺</p>
-            <button>Sepete Ekle</button>
+    <!-- Toprak Almaz Yazısı -->
+    <div class="watermark">Bu bir Toprak Almaz ürünüdür</div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">GAMEJET</div>
+        <div class="user-menu">
+            <span id="usernameDisplay"></span>
+            <button onclick="logout()">Çıkış Yap</button>
         </div>
-        <!-- Diğer oyunlar... -->
     </div>
-    <script src="js/main.js"></script>
+
+    <!-- Oyun Hesapları Grid -->
+    <div class="account-grid">
+        <!-- GTA 5 -->
+        <div class="account-card">
+            <div class="game-banner" style="background-image: url('images/gta5-banner.jpg')"></div>
+            <div class="account-details">
+                <h3>GTA 5 Premium Hesap</h3>
+                <p class="platform">Platform: Rockstar</p>
+                <ul class="features">
+                    <li>Seviye 120</li>
+                    <li>10 Milyar $</li>
+                    <li>Tüm DLC'ler Açık</li>
+                </ul>
+                <div class="price">499.90 ₺</div>
+                <button class="buy-btn" onclick="addToCart('GTA5')">Hemen Al</button>
+            </div>
+        </div>
+
+        <!-- RDR2 -->
+        <div class="account-card">
+            <div class="game-banner" style="background-image: url('images/rdr2-banner.jpg')"></div>
+            <div class="account-details">
+                <h3>Red Dead Redemption 2</h3>
+                <p class="platform">Platform: Steam</p>
+                <ul class="features">
+                    <li>Gold Edition</li>
+                    <li>Seviye 50</li>
+                    <li>5000 Altın</li>
+                </ul>
+                <div class="price">399.90 ₺</div>
+                <button class="buy-btn" onclick="addToCart('RDR2')">Hemen Al</button>
+            </div>
+        </div>
+
+        <!-- FC 25 -->
+        <div class="account-card">
+            <div class="game-banner" style="background-image: url('images/fc25-banner.jpg')"></div>
+            <div class="account-details">
+                <h3>EA FC 25 Ultimate Edition</h3>
+                <p class="platform">Platform: EA App</p>
+                <ul class="features">
+                    <li>10.000 FIFA Puan</li>
+                    <li>Tüm Yıldızlar Açık</li>
+                    <li>3 Takım Destekli</li>
+                </ul>
+                <div class="price">599.90 ₺</div>
+                <button class="buy-btn" onclick="addToCart('FC25')">Hemen Al</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/store.js"></script>
 </body>
 </html>
