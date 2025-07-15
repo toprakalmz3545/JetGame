@@ -2,32 +2,33 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>GameJet</title>
+    <meta charset="UTF-8">
+    <title>GameJet - Oyun Mağazası</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">GameJet</div>
-        <button id="adminToggle">Admin Panel</button>
+        <h1>GameJet</h1>
+        <p>En popüler oyunları en uygun fiyata alın!</p>
     </header>
-
-    <main id="gameContainer"></main>
-
-    <footer>
-        <p>Bir Toprak Almaz Ürünüdür</p>
-    </footer>
-
-    <div id="adminPanel" class="hidden">
-        <h2>Admin Panel</h2>
-        <input type="text" id="gameName" placeholder="Oyun Adı">
-        <input type="text" id="gamePrice" placeholder="Fiyat">
-        <input type="text" id="gameImage" placeholder="Görsel URL">
-        <button onclick="addGame()">Ekle</button>
-        <div id="gameList"></div>
-    </div>
-
-    <script src="script.js"></script>
+    <main>
+        <div class="games">
+            <div class="game-card">
+                <img src="images/gta.jpg" alt="GTA V">
+                <h2>GTA V</h2>
+                <p>249 TL</p>
+            </div>
+            <div class="game-card">
+                <img src="images/fifa.jpg" alt="FIFA 25">
+                <h2>FIFA 25</h2>
+                <p>499 TL</p>
+            </div>
+            <div class="game-card">
+                <img src="images/minecraft.jpg" alt="Minecraft">
+                <h2>Minecraft</h2>
+                <p>199 TL</p>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
