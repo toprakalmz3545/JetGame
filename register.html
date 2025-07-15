@@ -1,18 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Kayıt Ol - GameJet</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameJet Kayıt</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Kayıt Ol</h2>
-  <form id="registerForm">
-    <input type="text" id="registerUsername" placeholder="Kullanıcı Adı" required><br>
-    <input type="password" id="registerPassword" placeholder="Şifre" required><br>
-    <button type="submit">Kayıt Ol</button>
-  </form>
-  <p><a href="login.html">Zaten hesabın var mı? Giriş yap</a></p>
-  <script src="script.js"></script>
+  <div class="login-container">
+    <h1>Kayıt Ol</h1>
+    <input type="text" id="newUsername" placeholder="Kullanıcı Adı" />
+    <input type="password" id="newPassword" placeholder="Şifre" />
+    <button onclick="register()">Kayıt Ol</button>
+    <p>Zaten hesabınız var mı? <a href="index.html">Giriş Yap</a></p>
+  </div>
+
+  <script src="login.js"></script>
 </body>
 </html>

@@ -1,16 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>GameJet - Ana Sayfa</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameJet Giriş</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="welcome"></div>
-  <h1>GameJet Ana Sayfa</h1>
-  <div id="game-list"></div>
-  <div id="footer">Bir Toprak Almaz Ürünüdür</div>
-  <button id="adminBtn">Admin Paneli</button>
-  <script src="script.js"></script>
+  <div class="login-container">
+    <h1>GameJet</h1>
+    <input type="text" id="username" placeholder="Kullanıcı Adı" />
+    <input type="password" id="password" placeholder="Şifre" />
+    <button onclick="login()">Giriş Yap</button>
+    <p>Hesabınız yok mu? <a href="register.html">Kayıt Ol</a></p>
+  </div>
+
+  <script src="login.js"></script>
 </body>
 </html>
