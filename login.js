@@ -1,40 +1,28 @@
+function register() {
+  const username = document.getElementById("registerUsername").value;
+  const password = document.getElementById("registerPassword").value;
 
-function login() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-
-  const stored = localStorage.getItem("gamejetUsers");
-  if (stored) {
-    const users = JSON.parse(stored);
-    const user = users.find((u) => u.username === username && u.password === password);
-    if (user) {
-      localStorage.setItem("gamejetLoggedIn", "true");
-      window.location.href = "home.html";
-    } else {
-      alert("Kullanıcı adı veya şifre yanlış!");
-    }
+  if (username && password) {
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+    alert("Kayıt başarılı! Giriş yapabilirsiniz.");
+    window.location.href = "index.html";
   } else {
-    alert("Hiç kullanıcı bulunamadı. Lütfen kayıt olun.");
+    alert("Lütfen tüm alanları doldurun.");
   }
 }
 
-function register() {
-  const username = document.getElementById("newUsername").value;
-  const password = document.getElementById("newPassword").value;
+function login() {
+  const username = document.getElementById("loginUsername").value;
+  const password = document.getElementById("loginPassword").value;
 
-  let users = [];
-  const stored = localStorage.getItem("gamejetUsers");
-  if (stored) {
-    users = JSON.parse(stored);
+  const savedUsername = localStorage.getItem("username");
+  const savedPassword = localStorage.getItem("password");
+
+  if (username === savedUsername && password === savedPassword) {
+    alert("Giriş başarılı!");
+    window.location.href = "home.html";
+  } else {
+    alert("Hatalı kullanıcı adı veya şifre!");
   }
-
-  if (users.find((u) => u.username === username)) {
-    alert("Bu kullanıcı adı zaten mevcut.");
-    return;
-  }
-
-  users.push({ username, password });
-  localStorage.setItem("gamejetUsers", JSON.stringify(users));
-  alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
-  window.location.href = "index.html";
 }
