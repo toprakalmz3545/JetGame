@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>GameJet Giriş</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameJet</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="login-container">
-    <h2>Giriş Yap</h2>
-    <input type="text" id="loginUsername" placeholder="Kullanıcı Adı">
-    <input type="password" id="loginPassword" placeholder="Şifre">
-    <button onclick="login()">Giriş Yap</button>
-    <p><a href="register.html">Kayıt Ol</a></p>
+    <h1>GameJet Giriş</h1>
+    <form id="loginForm">
+      <input type="text" placeholder="Kullanıcı Adı" required />
+      <input type="password" placeholder="Şifre" required />
+      <button type="submit">Giriş Yap</button>
+    </form>
   </div>
-  <script src="login.js"></script>
+  <footer>Bir Toprak Almaz Ürünüdür</footer>
 </body>
 </html>
