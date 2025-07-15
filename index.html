@@ -2,89 +2,55 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GameJet | Giriş</title>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #121212;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .login-box {
-      background: #1f1f1f;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #000;
-      width: 300px;
-    }
-    .login-box h2 {
-      color: #fff;
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    .login-box input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      background: #333;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-    }
-    .login-box button {
-      width: 100%;
-      padding: 10px;
-      background-color: #c4001d;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .login-box button:hover {
-      background-color: #a30018;
-    }
-    .login-box p {
-      color: #aaa;
-      font-size: 14px;
-      text-align: center;
-    }
-    .login-box a {
-      color: #c4001d;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>GameJet Giriş</title>
+    <style>
+        body {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .login-box {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255,0,0,0.2);
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: crimson;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        a {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-  <div class="login-box">
-    <h2>GameJet Giriş</h2>
-    <input type="text" id="username" placeholder="Kullanıcı Adı" />
-    <input type="password" id="password" placeholder="Şifre" />
-    <button onclick="login()">Giriş Yap</button>
-    <p>Hesabınız yok mu? <a href="register.html">Kayıt Ol</a></p>
-    <p id="error" style="color: red;"></p>
-  </div>
-
-  <script>
-    function login() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const savedUser = localStorage.getItem("user");
-      const savedPass = localStorage.getItem("pass");
-
-      if (username === savedUser && password === savedPass) {
-        localStorage.setItem("loggedIn", "true");
-        window.location.href = "dashboard.html";
-      } else {
-        document.getElementById("error").innerText = "Kullanıcı adı veya şifre hatalı!";
-      }
-    }
-  </script>
+    <div class="login-box">
+        <h2>GameJet Giriş</h2>
+        <input type="text" placeholder="Kullanıcı Adı"><br>
+        <input type="password" placeholder="Şifre"><br>
+        <button onclick="location.href='anasayfa.html'">Giriş Yap</button><br><br>
+        <span>Hesabınız yok mu? <a href="register.html">Kayıt Ol</a></span>
+    </div>
 </body>
+
+<footer style="text-align: center; padding: 20px; color: gray; font-size: 14px;">
+    Bir Toprak Almaz Ürünüdür
+</footer>
+
 </html>
