@@ -1,25 +1,26 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameJet | Giriş</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Sağ üstte logo -->
-    <div class="gamejet-logo">GAMEJET</div>
+// KAYIT OL fonksiyonu (Yeni eklenen)
+function showRegister() {
+    const username = prompt("Yeni Kullanıcı Adı:");
+    const password = prompt("Yeni Şifre:");
+    
+    if (username && password) {
+        localStorage.setItem(username, password); // Kullanıcıyı kaydet
+        alert("Kayıt başarılı! Giriş yapabilirsin.");
+    } else {
+        alert("Geçersiz bilgi!");
+    }
+}
 
-    <!-- Giriş Formu -->
-    <div class="login-container">
-        <h2>GİRİŞ YAP</h2>
-        <input type="text" id="username" placeholder="Kullanıcı Adı">
-        <input type="password" id="password" placeholder="Şifre">
-        <button onclick="login()">Giriş Yap</button>
-        <p>Hesabın yok mu? <a href="#" onclick="showRegister()">Kayıt Ol</a></p>
-    </div>
+// GİRİŞ YAP fonksiyonu (Güncellendi)
+function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const savedPassword = localStorage.getItem(username); // Kayıtlı şifreyi kontrol et
 
-    <!-- JavaScript -->
-    <script src="main.js"></script>
-</body>
-</html>
+    if (savedPassword === password) {
+        localStorage.setItem("currentUser", username);
+        window.location.href = "store.html";
+    } else {
+        alert("Hatalı kullanıcı adı veya şifre!");
+    }
+}
