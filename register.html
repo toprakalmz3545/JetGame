@@ -11,8 +11,9 @@
       background-color: #111;
       font-family: 'Poppins', sans-serif;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       height: 100vh;
     }
 
@@ -69,6 +70,20 @@
     .login-link a:hover {
       text-decoration: underline;
     }
+
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    strong {
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -83,6 +98,10 @@
     </div>
   </div>
 
+  <footer>
+    Bir <strong>Toprak Almaz</strong> ürünüdür © 2025
+  </footer>
+
   <script>
     function register() {
       const username = document.getElementById("newUsername").value;
@@ -92,7 +111,7 @@
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
         alert("Kayıt başarılı! Anasayfaya yönlendiriliyorsunuz.");
-        window.location.href = "anasayfa.html";
+        window.location.href = "anasayfa.html"; // DOĞRU YÖNLENDİRME
       } else {
         alert("Lütfen tüm alanları doldurun.");
       }
