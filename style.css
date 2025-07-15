@@ -1,0 +1,142 @@
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', 'Roboto', sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+header {
+  background-color: #b30000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.container {
+  padding: 30px;
+}
+h2 {
+  color: #ff3333;
+  border-bottom: 2px solid #ff3333;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+.game-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.game-card {
+  background-color: #222;
+  width: 250px;
+  border: 2px solid #b30000;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.game-card:hover {
+  transform: scale(1.03);
+  border-color: #ff0000;
+}
+.game-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 1px solid #333;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.info {
+  padding: 15px;
+  text-align: center;
+}
+.price {
+  font-size: 20px;
+  color: #fff;
+  margin: 10px 0;
+}
+.discount {
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+.stars {
+  color: gold;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1a1a1a;
+  color: #777;
+  font-size: 14px;
+}
+.buy-container {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+.buy-box {
+  background: #222;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #ff0000;
+  text-align: center;
+  width: 400px;
+}
+.buy-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.buy-button {
+  background: #ff0000;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.login-body {
+  background: #111;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.login-container {
+  background: #222;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #ff0000;
+  text-align: center;
+}
+.login-container input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+}
+.login-container button {
+  padding: 10px 20px;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}

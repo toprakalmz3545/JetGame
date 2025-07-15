@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Giriş | GameJet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h2>Admin Giriş</h2>
+    <input type="password" id="admin-pass" placeholder="Şifre">
+    <button onclick="checkLogin()">Giriş Yap</button>
+    <p id="error-msg" style="color:red;"></p>
+  </div>
+  <script>
+    function checkLogin() {
+      const pass = document.getElementById("admin-pass").value;
+      if (pass === "gamejet123") {
+        window.location.href = "admin.html";
+      } else {
+        document.getElementById("error-msg").innerText = "Hatalı şifre!";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satın Al | GameJet</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const gameKey = params.get("game");
+    const games = {
+      fifa25: {
+        name: "FIFA 25",
+        price: 749,
+        image: "images/fifa25.jpg"
+      },
+      godofwar: {
+        name: "God of War Ragnarok",
+        price: 849,
+        image: "images/godofwar.jpg"
+      },
+      rdr2: {
+        name: "Red Dead Redemption 2",
+        price: 699,
+        image: "images/rdr2.jpg"
+      }
+    };
+
+    window.onload = () => {
+      const game = games[gameKey];
+      if (!game) return document.getElementById("game-info").innerHTML = "Oyun bulunamadı.";
+      document.getElementById("game-title").innerText = game.name;
+      document.getElementById("game-img").src = game.image;
+      document.getElementById("game-price").innerText = `₺${game.price}`;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">GameJet</div>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="admin-login.html">Admin Paneli</a>
+    </nav>
+  </header>
+  <main class="buy-container">
+    <div id="game-info" class="buy-box">
+      <h2 id="game-title"></h2>
+      <img id="game-img" src="" alt="Oyun Kapak" class="buy-img">
+      <p class="price" id="game-price"></p>
+      <button class="buy-button">Satın Al</button>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 GameJet. Tüm hakları saklıdır.</p>
+  </footer>
+</body>
+</html>

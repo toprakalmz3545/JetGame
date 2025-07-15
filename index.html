@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>GameJet - Steam Oyunları</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameJet</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <h1>GameJet</h1>
-        <p>En Ucuz Steam Kodları Burada!</p>
-    </header>
-    <main class="games">
-        <div class="game"><img src="images/fc25.jpg" alt="EA SPORTS FC 25"><span>EA SPORTS FC 25</span></div>
-        <div class="game"><img src="images/peak.jpg" alt="PEAK"><span>PEAK</span></div>
-        <div class="game"><img src="images/rematch.jpg" alt="REMATCH"><span>REMATCH</span></div>
-        <div class="game"><img src="images/eldenring.jpg" alt="ELDEN RING"><span>ELDEN RING</span></div>
-        <div class="game"><img src="images/eurotruck2.jpg" alt="Euro Truck Simulator 2"><span>Euro Truck Simulator 2</span></div>
-        <div class="game"><img src="images/sonsoftheforest.jpg" alt="Sons Of The Forest"><span>Sons Of The Forest</span></div>
-        <div class="game"><img src="images/rdr2.jpg" alt="Red Dead Redemption 2"><span>Red Dead Redemption 2</span></div>
-        <div class="game"><img src="images/cyberpunk2077.jpg" alt="Cyberpunk 2077"><span>Cyberpunk 2077</span></div>
-        <div class="game"><img src="images/deadbydaylight.jpg" alt="Dead by Daylight"><span>Dead by Daylight</span></div>
-        <div class="game"><img src="images/rust.jpg" alt="Rust"><span>Rust</span></div>
-        <div class="game"><img src="images/bannerlord.jpg" alt="Mount & Blade 2"><span>Mount & Blade 2: Bannerlord</span></div>
-        <div class="game"><img src="images/repo.jpg" alt="R.E.P.O."><span>R.E.P.O.</span></div>
-        <div class="game"><img src="images/forza5.jpg" alt="Forza Horizon 5"><span>Forza Horizon 5</span></div>
-        <div class="game"><img src="images/baldursgate3.jpg" alt="Baldur’s Gate 3"><span>Baldur’s Gate 3</span></div>
-    </main>
+  <header>
+    <div class="logo">GameJet</div>
+    <nav>
+      <a href="admin-login.html">Admin Paneli</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h2>En Çok Satan Oyunlar</h2>
+    <div class="game-grid">
+      <div class="game-card" onclick="location.href='buy.html?game=fifa25'">
+        <img src="images/fifa25.jpg" alt="FIFA 25">
+        <div class="info">
+          <h3>FIFA 25</h3>
+          <p class="price">₺749 <span class="discount">₺899</span></p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="game-card" onclick="location.href='buy.html?game=godofwar'">
+        <img src="images/godofwar.jpg" alt="God of War">
+        <div class="info">
+          <h3>God of War</h3>
+          <p class="price">₺849 <span class="discount">₺999</span></p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="game-card" onclick="location.href='buy.html?game=rdr2'">
+        <img src="images/rdr2.jpg" alt="RDR 2">
+        <div class="info">
+          <h3>RDR 2</h3>
+          <p class="price">₺699 <span class="discount">₺899</span></p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 GameJet. Tüm hakları saklıdır.</p>
+  </footer>
 </body>
 </html>
