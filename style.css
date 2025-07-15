@@ -1,9 +1,13 @@
 body {
-    background: #000;
-    color: #fff;
-    font-family: Arial;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .toprak-almaz {
@@ -12,22 +16,40 @@ body {
     right: 10px;
     color: #ff0000;
     font-size: 12px;
+    font-style: italic;
 }
 
 .login-container {
-    width: 300px;
-    margin: 100px auto;
     text-align: center;
-    border: 2px solid #ff0000;
-    padding: 20px;
+    padding: 30px;
+    background-color: #1a1a1a;
     border-radius: 10px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 20px #ff0000;
 }
 
-.card {
-    background: #1a1a1a;
-    width: 200px;
-    padding: 15px;
-    margin: 10px;
-    display: inline-block;
+.login-form input {
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    width: 80%;
+    background-color: #000000;
+    color: white;
     border: 1px solid #ff0000;
+}
+
+.login-form button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+h1 {
+    color: #ff0000;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
