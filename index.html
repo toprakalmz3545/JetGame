@@ -1,11 +1,287 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>JetGame</title>
-  </head>
-  <body>
-    <h1>JetGame'e Hoş Geldin!</h1>
-    <p>Site başarıyla yayınlandı 🚀</p>
-  </body>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameJet - En Ucuz Oyun Kodları</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">GJ</div>
+                    <span class="logo-text">GameJet</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <a href="#" class="nav-link">Anasayfa</a>
+                    <a href="#" class="nav-link">Tüm Kategoriler</a>
+                    <a href="#" class="nav-link">Mağaza</a>
+                    <a href="#" class="nav-link">Destek</a>
+                </nav>
+
+                <!-- Search -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Ürün ara...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Actions -->
+                <div class="header-actions">
+                    <button class="cart-btn" onclick="openCartModal()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="login-btn" onclick="openLoginModal()">Giriş Yap</button>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">EN UCUZ OYUN KODLARI</h1>
+                <p class="hero-subtitle">Valorant VP, League of Legends RP, Steam kodları ve daha fazlası için en güvenilir adres</p>
+                
+                <div class="hero-features">
+                    <div class="feature-badge">
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 Müşteri Memnuniyeti</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Anında Teslimat</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-gift"></i>
+                        <span>%80'e Varan İndirim</span>
+                    </div>
+                </div>
+
+                <div class="hero-offers">
+                    <div class="offer-card offer-orange">
+                        <h3>HEDİYE FORZA HORIZON 4</h3>
+                        <div class="offer-price">100 TL</div>
+                        <p>100TL üzeri Steam Random Key alışverişlerinizde sepette Forza Horizon 4 hediye!</p>
+                        <button class="offer-btn">Hemen Al</button>
+                    </div>
+                    <div class="offer-card offer-purple">
+                        <h3>HEDİYE FORZA HORIZON 5</h3>
+                        <div class="offer-price">200 TL</div>
+                        <p>200TL üzeri Oyun ve Steam Random Key alışverişlerinizde sepette Forza Horizon 5 hediye!</p>
+                        <button class="offer-btn">Hemen Al</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Popüler Kategoriler</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon category-red">
+                        <i class="fas fa-sword"></i>
+                    </div>
+                    <h3>Valorant VP</h3>
+                    <p>150+ ürün</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon category-blue">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>League of Legends RP</h3>
+                    <p>200+ ürün</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon category-yellow">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>PUBG Mobile UC</h3>
+                    <p>80+ ürün</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon category-green">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Steam Random Key</h3>
+                    <p>500+ ürün</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon category-purple">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Mobile Legends</h3>
+                    <p>120+ ürün</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon category-orange">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Roblox Robux</h3>
+                    <p>90+ ürün</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Featured Products -->
+                <div class="featured-products">
+                    <div class="section-header">
+                        <h2>Öne Çıkan Ürünler</h2>
+                        <a href="#" class="view-all">Tümünü Gör →</a>
+                    </div>
+                    <div class="products-grid" id="featured-products">
+                        <!-- Products will be loaded by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Best Sellers -->
+                <div class="best-sellers">
+                    <div class="best-sellers-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h2>En Çok Satanlar</h2>
+                    </div>
+                    <div class="best-sellers-list" id="best-sellers">
+                        <!-- Best sellers will be loaded by JavaScript -->
+                    </div>
+                    <button class="view-all-btn">Tümünü Gör</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">GJ</div>
+                        <span class="logo-text">GameJet</span>
+                    </div>
+                    <p>Oyun severlerin en güvenilir adresi. En ucuz oyun kodları ve anında teslimat.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Hızlı Erişim</h3>
+                    <ul>
+                        <li><a href="#">Anasayfa</a></li>
+                        <li><a href="#">Valorant VP</a></li>
+                        <li><a href="#">League of Legends RP</a></li>
+                        <li><a href="#">Steam Random Key</a></li>
+                        <li><a href="#">PUBG Mobile UC</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Müşteri Hizmetleri</h3>
+                    <ul>
+                        <li><a href="#">Destek</a></li>
+                        <li><a href="#">Sık Sorulan Sorular</a></li>
+                        <li><a href="#">İade Politikası</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@gamejet.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+90 555 123 4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp Destek</span>
+                        </div>
+                    </div>
+                    <div class="support-info">7/24 Canlı Destek</div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 GameJet. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sepetim</h2>
+                <button class="close-btn" onclick="closeCartModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <div class="total-row">
+                        <span>Toplam: </span>
+                        <span id="cart-total">0.00₺</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="checkout-btn">Ödeme Yap</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Giriş Yap</h2>
+                <button class="close-btn" onclick="closeLoginModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form">
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #d1d5db;">E-posta</label>
+                        <input type="email" style="width: 100%; padding: 0.75rem; background: #374151; border: 1px solid #4b5563; border-radius: 0.5rem; color: white;" placeholder="E-posta adresiniz" required>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #d1d5db;">Şifre</label>
+                        <input type="password" style="width: 100%; padding: 0.75rem; background: #374151; border: 1px solid #4b5563; border-radius: 0.5rem; color: white;" placeholder="Şifreniz" required>
+                    </div>
+                    <button type="submit" class="checkout-btn">Giriş Yap</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
