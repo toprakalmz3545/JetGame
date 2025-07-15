@@ -1,165 +1,109 @@
-/* Anime Gradient Arkaplan */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    background: linear-gradient(-45deg, #000000, #1a0000, #000000, #1a0000);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: #fff;
-    font-family: 'Rajdhani', sans-serif;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
+  background-color: #111;
+  color: #fff;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.header {
+  background-color: #000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Glassmorphism Panel */
-.auth-glass {
-    background: rgba(10, 10, 10, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    border-radius: 15px;
-    padding: 40px;
-    width: 350px;
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
-    position: relative;
-    z-index: 1;
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
 }
 
-/* Glitch Logo */
-.logo-glitch {
-    font-size: 3.5rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 0 10px #ff0000;
-    margin-bottom: 30px;
-    position: relative;
+.logo .red {
+  color: red;
 }
 
-.logo-glitch span {
-    color: #ff0000;
-    animation: glitch 2s infinite;
+.search-login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-@keyframes glitch {
-    0% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
-    25% { text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
-    50% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
-    75% { text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
-    100% { text-shadow: 2px 0 #0ff, -2px 0 #f0f; }
-}
-/* style.css'e ekle */
-.game-background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+.search-box {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
 }
 
-.parallax-layer {
-    position: absolute;
-    width: 300%;
-    height: 300%;
-    background-repeat: repeat;
-    animation: parallaxScroll 100s linear infinite;
+.login-button, .register-button, .cart-button {
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
-.parallax-layer:nth-child(1) {
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="white"/><circle cx="80" cy="40" r="1" fill="white"/></svg>');
+.banner-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
 }
 
-.parallax-layer:nth-child(2) {
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="%23ff0000" stroke-width="2"/></svg>');
-    animation-duration: 150s;
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+  justify-content: center;
 }
 
-@keyframes parallaxScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-66.6%); }
-}
-/* style.css'e ekle */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white"/></svg>');
-    animation: particles 15s linear infinite;
-    pointer-events: none;
-    z-index: -1;
+.game-card {
+  background-color: #222;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
-@keyframes particles {
-    0% { transform: translateY(0) translateX(0); opacity: 0; }
-    50% { opacity: 0.3; }
-    100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
-}
-/* Oyun Hesap Kartları */
-.account-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 20px;
+.game-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
-.account-card {
-    background: #1a1a1a;
-    border: 1px solid #ff0000;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.account-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
-}
-
-.game-banner {
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-}
-
-.account-details {
-    padding: 15px;
-}
-
-.features {
-    margin: 10px 0;
-    padding-left: 20px;
-    color: #ccc;
-}
-
-.features li {
-    margin-bottom: 5px;
+.game-card h3 {
+  margin: 10px 0;
 }
 
 .price {
-    color: #ff0000;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 15px 0;
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .buy-btn {
-    background: linear-gradient(45deg, #ff0000, #ff5e00);
-    border: none;
-    padding: 10px 20px;
-    width: 100%;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s;
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.buy-btn:hover {
-    background: linear-gradient(45deg, #ff5e00, #ff0000);
+.footer-note {
+  text-align: center;
+  padding: 15px;
+  background: #000;
+  color: red;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

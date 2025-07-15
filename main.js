@@ -1,19 +1,20 @@
-// Basit giriş/kayıt fonksiyonları
-function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    
-    if(username === "" || password === "") {
-        alert("Kullanıcı adı ve şifre girin!");
-        return;
-    }
-    
-    alert("Giriş başarılı! Yönlendiriliyorsunuz...");
-    // Mağaza sayfasına yönlendirme:
-    // window.location.href = "store.html";
+const productList = document.getElementById("product-list");
+
+function renderGames() {
+  let games = JSON.parse(localStorage.getItem("gamejet_games")) || [];
+  productList.innerHTML = "";
+
+  games.forEach(game => {
+    const card = document.createElement("div");
+    card.className = "game-card";
+    card.innerHTML = `
+      <img src="${game.image}" alt="${game.title}" />
+      <h3>${game.title}</h3>
+      <div class="price">${game.price}₺</div>
+      <button class="buy-btn">Satın Al</button>
+    `;
+    productList.appendChild(card);
+  });
 }
 
-function register() {
-    alert("Kayıt işlemi başlatıldı!");
-    // Kayıt işlemleri buraya
-}
+document.addEventListener("DOMContentLoaded", renderGames);

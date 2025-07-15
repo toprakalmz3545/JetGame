@@ -1,56 +1,40 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameJet | Next-Level Gaming</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameJet - Ana Sayfa</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Toprak Almaz Yazısı -->
-    <div class="watermark pulse">Bu bir Toprak Almaz ürünüdür</div>
-
-    <!-- Konsol Animasyonu -->
-    <div class="console-effect">
-        <div class="led"></div>
-        <span>>_ GameJet Terminal</span>
+  <header class="header">
+    <div class="logo">Game<span class="red">Jet</span></div>
+    <div class="search-login">
+      <input type="text" placeholder="Ürün ara" class="search-box" />
+      <a href="login.html" class="login-button">Giriş Yap</a>
+      <a href="register.html" class="register-button">Kayıt Ol</a>
+      <a href="#" class="cart-button">🛒</a>
     </div>
+  </header>
 
-    <!-- Ana Giriş Alanı -->
-    <div class="auth-glass">
-        <div class="logo-glitch">GAME<span>JET</span></div>
-        
-        <div class="auth-form">
-            <div class="input-group">
-                <input type="text" id="username" required>
-                <label>Kullanıcı Adı</label>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="input-group">
-                <input type="password" id="password" required>
-                <label>Şifre</label>
-                <div class="underline"></div>
-            </div>
+  <button id="adminBtn" style="position: fixed; top: 15px; right: 15px; background: red; color: white; border: none; padding: 10px; border-radius: 5px; z-index: 999; font-weight: bold;">Admin</button>
 
-            <button id="loginBtn" class="btn-hover">
-                <span>Giriş Yap</span>
-                <div class="hover-effect"></div>
-            </button>
+  <main>
+    <section class="banner">
+      <img src="images/banner.jpg" alt="Valorant Banner" class="banner-img" />
+    </section>
 
-            <button id="registerBtn" class="btn-hover">
-                <span>Kayıt Ol</span>
-                <div class="hover-effect"></div>
-            </button>
-        </div>
-    </div>
+    <section class="product-list" id="product-list">
+      <!-- JS ile ürünler buraya eklenecek -->
+    </section>
+  </main>
 
-    <script src="js/auth.js"></script>
+  <footer>
+    <p class="footer-note">Bu bir Toprak Almaz ürünüdür</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>
-<!-- index.html body kısmına ekle -->
-<div class="game-background">
-    <div class="parallax-layer" data-depth="0.1"></div> <!-- Uzak yıldızlar -->
-    <div class="parallax-layer" data-depth="0.3"></div> <!-- Gezegenler -->
-    <div class="parallax-layer" data-depth="0.6"></div> <!-- Uçan uzay gemileri -->
-</div>
