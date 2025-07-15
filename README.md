@@ -1,3 +1,2 @@
 # JetGame
-Dünyanın en iyi oyun mağzası
-
+Dünyanın en iyi oyun mağzası                  Bir Toprak Almaz Ürünüdür
