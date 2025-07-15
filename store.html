@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>GameJet | Mağaza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sağ üstte logo -->
+    <div class="gamejet-logo">GAMEJET</div>
+
+    <!-- Kullanıcı bilgisi ve çıkış butonu -->
+    <div class="user-info">
+        Hoş geldin, <span id="loggedInUser"></span>! 
+        <button onclick="logout()">Çıkış Yap</button>
+    </div>
+
+    <!-- Oyun kartları -->
+    <div class="game-cards">
+        <div class="card">
+            <img src="images/fifa25.jpg" alt="EA SPORTS FC 25">
+            <h3>EA SPORTS FC 25</h3>
+            <p class="price">249.90 ₺ <span class="old-price">300.00 ₺</span></p>
+            <button class="add-to-cart">Sepete Ekle</button>
+        </div>
+        <!-- Diğer oyunlar buraya eklenebilir -->
+    </div>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>

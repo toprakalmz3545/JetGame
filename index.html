@@ -1,48 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>GameJet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameJet | Giriş</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="login-container" class="centered">
-        <h2>Giriş Yap</h2>
-        <input type="text" id="username" placeholder="Kullanıcı Adı"><br>
-        <input type="password" id="password" placeholder="Şifre"><br>
+    <!-- Sağ üstte logo -->
+    <div class="gamejet-logo">GAMEJET</div>
+
+    <!-- Giriş Formu -->
+    <div class="login-container">
+        <h2>GİRİŞ YAP</h2>
+        <input type="text" id="username" placeholder="Kullanıcı Adı">
+        <input type="password" id="password" placeholder="Şifre">
         <button onclick="login()">Giriş Yap</button>
-        <p>Hesabınız yok mu? <a href="#" onclick="showRegister()">Kayıt Ol</a></p>
+        <p>Hesabın yok mu? <a href="#" onclick="showRegister()">Kayıt Ol</a></p>
     </div>
 
-    <div id="register-container" class="centered" style="display:none;">
-        <h2>Kayıt Ol</h2>
-        <input type="text" id="new-username" placeholder="Kullanıcı Adı"><br>
-        <input type="password" id="new-password" placeholder="Şifre"><br>
-        <button onclick="register()">Kayıt Ol</button>
-        <p>Zaten hesabınız var mı? <a href="#" onclick="showLogin()">Giriş Yap</a></p>
-    </div>
-
-    <div id="main-page" style="display:none;">
-        <h1>GameJet Oyun Mağazası</h1>
-        <div id="games-container"></div>
-        <div id="admin-button" style="position: fixed; top: 10px; right: 10px;">
-            <button onclick="showAdminPanel()">Admin Paneli</button>
-        </div>
-        <div id="footer-note">Bir Toprak Almaz Ürünüdür</div>
-    </div>
-
-    <div id="admin-panel" style="display:none;">
-        <h2>Admin Paneli</h2>
-        <input type="text" id="game-title" placeholder="Oyun Adı">
-        <input type="text" id="game-price" placeholder="Fiyat">
-        <input type="text" id="game-image" placeholder="Görsel URL">
-        <button onclick="addGame()">Oyun Ekle</button>
-        <div id="admin-games-list"></div>
-        <button onclick="closeAdminPanel()">Kapat</button>
-    </div>
-
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="main.js"></script>
 </body>
 </html>
