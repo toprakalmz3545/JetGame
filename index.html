@@ -1,26 +1,18 @@
-// KAYIT OL fonksiyonu (Yeni eklenen)
-function showRegister() {
-    const username = prompt("Yeni Kullanıcı Adı:");
-    const password = prompt("Yeni Şifre:");
-    
-    if (username && password) {
-        localStorage.setItem(username, password); // Kullanıcıyı kaydet
-        alert("Kayıt başarılı! Giriş yapabilirsin.");
-    } else {
-        alert("Geçersiz bilgi!");
-    }
-}
-
-// GİRİŞ YAP fonksiyonu (Güncellendi)
-function login() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const savedPassword = localStorage.getItem(username); // Kayıtlı şifreyi kontrol et
-
-    if (savedPassword === password) {
-        localStorage.setItem("currentUser", username);
-        window.location.href = "store.html";
-    } else {
-        alert("Hatalı kullanıcı adı veya şifre!");
-    }
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GameJet | Giriş</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="toprak-almaz">Bu bir Toprak Almaz ürünüdür</div>
+    <div class="login-container">
+        <h1>GAMEJET</h1>
+        <input type="text" id="username" placeholder="Kullanıcı Adı">
+        <input type="password" id="password" placeholder="Şifre">
+        <button onclick="login()">Giriş Yap</button>
+        <button onclick="register()">Kayıt Ol</button>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

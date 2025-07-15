@@ -1,29 +1,40 @@
-// Kullanıcı giriş fonksiyonu
+// Kullanıcı verileri
+let users = JSON.parse(localStorage.getItem('users')) || [];
+
+// Kayıt olma
+function register() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    if (username && password) {
+        users.push({ username, password });
+        localStorage.setItem('users', JSON.stringify(users));
+        alert('Kayıt başarılı! Giriş yapabilirsin.');
+    } else {
+        alert('Kullanıcı adı ve şifre girin!');
+    }
+}
+
+// Giriş yapma
 function login() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
     
-    // Basit kontrol
-    if(username === "" || password === "") {
-        alert("Kullanıcı adı ve şifre girin!");
-        return;
+    const user = users.find(u => u.username === username && u.password === password);
+    if (user) {
+        localStorage.setItem('currentUser', username);
+        window.location.href = 'store.html';
+    } else {
+        alert('Hatalı giriş!');
     }
-    
-    // LocalStorage'a kaydet
-    localStorage.setItem("currentUser", username);
-    window.location.href = "store.html";
 }
 
-// Çıkış fonksiyonu
-function logout() {
-    localStorage.removeItem("currentUser");
-    window.location.href = "index.html";
-}
-
-// Sayfa yüklendiğinde kullanıcı kontrolü
-document.addEventListener("DOMContentLoaded", function() {
-    const loggedInUser = localStorage.getItem("currentUser");
-    if(loggedInUser) {
-        document.getElementById("loggedInUser").textContent = loggedInUser;
+// Mağazada kullanıcı bilgisini göster
+if (window.location.pathname.includes('store.html')) {
+    const currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+        document.getElementById('userInfo').innerHTML = `Hoş geldin, ${currentUser}!`;
+    } else {
+        window.location.href = 'index.html';
     }
-});
+}
