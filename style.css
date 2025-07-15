@@ -1,1 +1,43 @@
-/* Stil dosyası (şimdilik kullanılmadı) */
+
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: none;
+}
+button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #222;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+li span {
+    flex: 1;
+}
+li button {
+    background: darkred;
+    padding: 5px 10px;
+}
