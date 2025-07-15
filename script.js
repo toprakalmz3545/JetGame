@@ -4,7 +4,10 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   const password = document.getElementById('password').value.trim();
   const errorMessage = document.getElementById('errorMessage');
 
-  if (username === 'admin' && password === '1234') {
+  const savedUser = JSON.parse(localStorage.getItem('user'));
+
+  if ((savedUser && username === savedUser.username && password === savedUser.password) ||
+      (username === 'admin' && password === '1234')) {
     window.location.href = 'homepage.html';
   } else {
     errorMessage.classList.remove('hidden');

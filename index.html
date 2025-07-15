@@ -11,10 +11,11 @@
   <div class="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-md">
     <h2 class="text-center text-2xl font-bold text-red-500 mb-6">Giriş Yap</h2>
     <form id="loginForm" class="space-y-4">
-      <input type="text" id="username" placeholder="Kullanıcı Adı" class="w-full p-3 rounded bg-gray-800 text-white focus:outline-none" required />
-      <input type="password" id="password" placeholder="Şifre" class="w-full p-3 rounded bg-gray-800 text-white focus:outline-none" required />
+      <input type="text" id="username" placeholder="Kullanıcı Adı" class="w-full p-3 rounded bg-gray-800 text-white" required />
+      <input type="password" id="password" placeholder="Şifre" class="w-full p-3 rounded bg-gray-800 text-white" required />
       <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded font-semibold">Giriş Yap</button>
     </form>
+    <p class="mt-4 text-sm text-center">Hesabın yok mu? <a href="register.html" class="text-red-400 hover:underline">Kayıt Ol</a></p>
     <p id="errorMessage" class="text-red-500 mt-4 text-sm text-center hidden">Hatalı kullanıcı adı veya şifre!</p>
   </div>
   <script src="script.js"></script>

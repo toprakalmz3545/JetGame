@@ -1,91 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kayıt Ol - GameJet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a, #550000);
-            color: #fff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .register-box {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px red;
-            width: 300px;
-        }
-        .register-box h2 {
-            margin-bottom: 20px;
-            text-align: center;
-            color: red;
-        }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: red;
-            border: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkred;
-        }
-        .footer {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 12px;
-            color: #aaa;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameJet | Kayıt Ol</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="register-box">
-        <h2>Kayıt Ol</h2>
-        <form onsubmit="registerUser(event)">
-            <input type="text" id="username" placeholder="Kullanıcı Adı" required>
-            <input type="email" id="email" placeholder="E-posta" required>
-            <input type="password" id="password" placeholder="Şifre" required>
-            <button type="submit">Kayıt Ol</button>
-        </form>
-    </div>
-    <div class="footer">Bir Toprak Almaz Ürünüdür</div>
+<body class="bg-black text-white min-h-screen flex items-center justify-center">
+  <div class="absolute top-6 left-6 text-3xl font-bold text-red-600">Game<span class="text-white">Jet</span></div>
+  <div class="bg-gray-900 p-8 rounded-2xl shadow-lg w-full max-w-md">
+    <h2 class="text-center text-2xl font-bold text-red-500 mb-6">Kayıt Ol</h2>
+    <form id="registerForm" class="space-y-4">
+      <input type="text" id="newUsername" placeholder="Yeni Kullanıcı Adı" class="w-full p-3 rounded bg-gray-800 text-white" required />
+      <input type="password" id="newPassword" placeholder="Şifre" class="w-full p-3 rounded bg-gray-800 text-white" required />
+      <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded font-semibold">Kayıt Ol</button>
+    </form>
+    <p id="successMessage" class="text-green-400 text-sm mt-4 hidden text-center">Kayıt başarılı! Giriş ekranına yönlendiriliyorsunuz...</p>
+  </div>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('newUsername').value;
+      const password = document.getElementById('newPassword').value;
 
-    <script>
-        function registerUser(e) {
-            e.preventDefault();
-            const username = document.getElementById("username").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            // LocalStorage'a kullanıcıyı kaydet (örnek amaçlı)
-            localStorage.setItem("gamejet_user", JSON.stringify({ username, email, password }));
-
-            // Ana sayfaya yönlendir
-            window.location.href = "index.html";
-        }
-    </script>
+      localStorage.setItem('user', JSON.stringify({ username, password }));
+      document.getElementById('successMessage').classList.remove('hidden');
+      setTimeout(() => window.location.href = 'index.html', 1500);
+    });
+  </script>
 </body>
 </html>
