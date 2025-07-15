@@ -1,51 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GameJet | Kayıt Ol</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Kayıt Ol - GameJet</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-black text-white min-h-screen flex flex-col">
-  <header class="p-4 text-3xl font-bold text-red-600">
-    Game<span class="text-white">Jet</span>
-  </header>
-  <main class="flex-grow flex items-center justify-center">
-    <div class="bg-gray-900 p-8 rounded shadow-md w-80">
-      <h2 class="text-center text-red-600 text-2xl font-semibold mb-6">Kayıt Ol</h2>
-      <form id="registerForm" class="flex flex-col gap-4">
-        <input type="text" id="newUsername" placeholder="Yeni Kullanıcı Adı" required
-          class="p-3 rounded bg-gray-800 text-white focus:outline-none" />
-        <input type="password" id="newPassword" placeholder="Şifre" required
-          class="p-3 rounded bg-gray-800 text-white focus:outline-none" />
-        <button type="submit" class="bg-red-600 p-3 rounded font-semibold hover:bg-red-700 transition">
-          Kayıt Ol
-        </button>
-      </form>
-      <p id="successMessage" class="text-green-500 mt-3 text-center hidden">
-        Kayıt başarılı! Yönlendiriliyorsunuz...
-      </p>
-    </div>
-  </main>
-
+<body>
+  <div class="login-container">
+    <h1>Hesap Oluştur</h1>
+    <input id="username" type="text" placeholder="Kullanıcı Adı" />
+    <input id="password" type="password" placeholder="Şifre" />
+    <button onclick="register()">Kayıt Ol</button>
+    <p>Zaten hesabın var mı? <a href="index.html">Giriş Yap</a></p>
+  </div>
   <script>
-    document.getElementById('registerForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const username = document.getElementById('newUsername').value.trim();
-      const password = document.getElementById('newPassword').value.trim();
-
-      if (!username || !password) return;
-
-      // Basit kullanıcı kaydı (localStorage)
-      localStorage.setItem('user', JSON.stringify({ username, password }));
-
-      const successMessage = document.getElementById('successMessage');
-      successMessage.classList.remove('hidden');
-
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 1500);
-    });
+    function register() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      localStorage.setItem("username", u);
+      localStorage.setItem("password", p);
+      alert("Kayıt başarılı! Şimdi giriş yap.");
+      window.location.href = "index.html";
+    }
   </script>
 </body>
 </html>

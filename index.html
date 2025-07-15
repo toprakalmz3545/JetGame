@@ -2,33 +2,30 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>GameJet - Oyun Mağazası</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>GameJet Giriş</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>GameJet</h1>
-        <p>En popüler oyunları en uygun fiyata alın!</p>
-    </header>
-    <main>
-        <div class="games">
-            <div class="game-card">
-                <img src="images/gta.jpg" alt="GTA V">
-                <h2>GTA V</h2>
-                <p>249 TL</p>
-            </div>
-            <div class="game-card">
-                <img src="images/fifa.jpg" alt="FIFA 25">
-                <h2>FIFA 25</h2>
-                <p>499 TL</p>
-            </div>
-            <div class="game-card">
-                <img src="images/minecraft.jpg" alt="Minecraft">
-                <h2>Minecraft</h2>
-                <p>199 TL</p>
-            </div>
-        </div>
-    </main>
+  <div class="login-container">
+    <h1>GameJet</h1>
+    <input id="username" type="text" placeholder="Kullanıcı Adı" />
+    <input id="password" type="password" placeholder="Şifre" />
+    <button onclick="login()">Giriş Yap</button>
+    <p>Hesabın yok mu? <a href="register.html">Kayıt Ol</a></p>
+  </div>
+  <script>
+    function login() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      const savedU = localStorage.getItem("username");
+      const savedP = localStorage.getItem("password");
+      if (u === savedU && p === savedP) {
+        window.location.href = "home.html";
+      } else {
+        alert("Hatalı giriş!");
+      }
+    }
+  </script>
 </body>
 </html>
