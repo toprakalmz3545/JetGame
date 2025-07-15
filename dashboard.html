@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameJet | Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">GameJet</div>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="#" onclick="logout()">Çıkış Yap</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h2>Hoş Geldin, <span id="username"></span>!</h2>
+    <p>Buradan oyunları inceleyebilir ve satın alma işlemleri yapabilirsin.</p>
+  </main>
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("username").innerText = localStorage.getItem("user");
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kayıt Ol | GameJet</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h2>Kayıt Ol</h2>
+    <input type="text" id="reg-username" placeholder="Kullanıcı Adı" />
+    <input type="password" id="reg-password" placeholder="Şifre" />
+    <button onclick="register()">Kayıt Ol</button>
+    <p>Zaten hesabın var mı? <a href="login.html">Giriş Yap</a></p>
+    <p id="reg-msg" style="color:green;"></p>
+  </div>
+  <script>
+    function register() {
+      const username = document.getElementById("reg-username").value;
+      const password = document.getElementById("reg-password").value;
+      localStorage.setItem("user", username);
+      localStorage.setItem("pass", password);
+      document.getElementById("reg-msg").innerText = "Kayıt başarılı! Giriş yapabilirsiniz.";
+    }
+  </script>
+</body>
+</html>
